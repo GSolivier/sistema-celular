@@ -5,6 +5,7 @@ string estadoEscolha;
 string escolhaMenu;
 bool loopBreak = true;
 
+Console.Clear();
 Console.WriteLine($"Digite a cor do seu celular:");
 celular.Cor = Console.ReadLine();
 
@@ -13,6 +14,11 @@ celular.Modelo = Console.ReadLine();
 
 Console.WriteLine($"Qual o tamanho do seu celular?");
 celular.Tamanho = Console.ReadLine();
+
+Console.WriteLine($"Qual o seu nome de usuário?");
+celular.CelularUser = Console.ReadLine();
+
+
 
 escolhaEstado:
 Console.WriteLine($"O seu celular está ligado? 's' para sim / 'n' para não.");
@@ -71,10 +77,11 @@ switch (escolhaMenu)
     goto menuStart;    
 
     case "3":
+    Console.Clear();
     Console.WriteLine($"Cor: {celular.Cor}");
     Console.WriteLine($"Modelo: {celular.Modelo}");
     Console.WriteLine($"Tamanho: {celular.Tamanho}");
-
+    Console.WriteLine($"");
     Console.WriteLine($"Aperte qualquer botão para retornar ao menu.");
     Console.ReadKey();
     goto menuStart;
@@ -91,10 +98,9 @@ switch (escolhaMenu)
     default:
     Console.Clear();
     Console.WriteLine($"Digite uma opção válida!");
+    Thread.Sleep(3000);
         goto menuStart;
 }
-
-    
 } while (loopBreak);
 
 
